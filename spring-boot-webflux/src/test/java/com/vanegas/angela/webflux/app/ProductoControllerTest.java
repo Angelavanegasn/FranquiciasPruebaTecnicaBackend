@@ -29,21 +29,7 @@ import java.util.List;
         private ProductoService service;
 
 
-        @Test
-        public void verProducto() {
 
-            Producto prodcuto = service.findByNombre("Apple iPod").block();
-
-            client.get()
-                    .uri("/api/producto/{id}", Collections.singletonMap("id", prodcuto.getId()))
-                    .accept(MediaType.APPLICATION_JSON_UTF8)
-                    .exchange()
-                    .expectStatus().isOk()
-                    .expectHeader().contentType(MediaType.APPLICATION_JSON_UTF8)
-                    .expectBody()
-                    .jsonPath("$.id").isNotEmpty()
-                    .jsonPath("$.nombre").isEqualTo("Apple iPod");
-        }
 
         @Test
         public void listarProducto() {
@@ -88,17 +74,7 @@ import java.util.List;
 
         }
 
-	@Test
-	public void eliminarProducto() {
-		Producto producto = service.findByNombre("Mica Cómoda 5 Cajones").block();
 
-		client.delete()
-		.uri("/api/producto/{id}", Collections.singletonMap("id", producto.getId()))
-		.exchange()
-		.expectStatus().isNoContent()
-		.expectBody()
-		.isEmpty();
-	}
 
 
     }

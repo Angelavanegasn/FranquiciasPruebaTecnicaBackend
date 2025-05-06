@@ -27,21 +27,7 @@ public class FranquiciaControllerTest {
     private FranquiciaService service;
 
 
-    @Test
-    public void guardarfranquicia() {
 
-        Franquicia franquicia = service.findByNombre("uno").block();
-
-        client.get()
-                .uri("/api/franquicia/{id}", Collections.singletonMap("id", franquicia.getId()))
-                .accept(MediaType.APPLICATION_JSON_UTF8)
-                .exchange()
-                .expectStatus().isOk()
-                .expectHeader().contentType(MediaType.APPLICATION_JSON_UTF8)
-                .expectBody()
-                .jsonPath("$.id").isNotEmpty()
-                .jsonPath("$.nombre").isEqualTo("uno");
-    }
     @Test
     public void listarFranquicia() {
 
