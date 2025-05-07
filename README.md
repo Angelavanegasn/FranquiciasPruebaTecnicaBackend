@@ -13,13 +13,10 @@ Este proyecto implementa una API REST reactiva utilizando **Spring WebFlux** par
 - Modificar el stock de un producto.
 - Consultar el producto con mayor stock por sucursal dentro de una franquicia.
 
-### Funcionalidades Adicionales (Plus)
-
-- Actualización del nombre de franquicias, sucursales y productos.
 
 ## Pruebas Unitarias
 
-Las pruebas unitarias están implementadas con **JUnit 5** y **Reactor Test** para validar la lógica de negocio en un entorno reactivo.
+Las pruebas unitarias están implementadas con **JUnit 4** y **Reactor Test** para validar la lógica de negocio en un entorno reactivo.
 
 ## Se ejecutan todas las pruebas unitarias
 
@@ -150,26 +147,26 @@ Una vez desplegada, la API estará disponible en el puerto 8080 de la IP públic
 
 ### Franquicias
 
-| Método | Endpoint                             | Descripción                  |
-|--------|--------------------------------------|------------------------------|
-| POST   | `/api/franquicia`                   | Crear nueva franquicia       |
-| GET    | `/api/franquicia`                   | Listar todas las franquicias |
-| GET    | `/api/franquicia/{id}`              | Obtener franquicia por ID    |
+| Método | Endpoint                  | Descripción                  |
+|--------|---------------------------|------------------------------|
+| POST   | `/api/franquicia`         | Crear nueva franquicia       |
+| GET    | `/api/franquicia`         | Listar todas las franquicias |
+| GET    | `/api/franquicia/{id}`    | Obtener franquicia por ID    |
 
 ###  Sucursales
 
-| Método | Endpoint                             | Descripción                            |
-|--------|--------------------------------------|----------------------------------------|
-| POST   | `/api/sucursal`                      | Crear nueva sucursal                   |
-| GET    | `/api/sucursal`                      | Listar todas las sucursales            |
-| GET    | `/api/sucursal/{id}`                 | Obtener sucursal por ID                |
+| Método | Endpoint                  | Descripción              |
+|--------|---------------------------|--------------------------|
+| POST   | `/api/sucursal`           | Crear nueva sucursal     |
+| GET    | `/api/sucursal/{id}`      | Obtener sucursal por ID  |
+| GET    | `/api/sucursal`           | Listar todas las sucursales |
 
 ### Productos
 
-| Método | Endpoint                              | Descripción                            |
-|--------|---------------------------------------|----------------------------------------|
-| POST   | `/api/producto`                       | Agregar nuevo producto a una sucursal |
-| GET    | `/api/producto`                       | Listar todos los productos              |
-| GET    | `/api/producto/{id}`                  | Obtener producto por ID                 |
-| PUT    | `/api/producto/{id}`                  | Actualizar información de un producto  |
-| DELETE | `/api/producto/{id}`                  | Eliminar producto                       |
+| Método | Endpoint                  | Descripción              |
+|--------|---------------------------|--------------------------|
+| GET    | `/api/producto`           | Listar todos los productos |
+| GET    | `/api/producto/{id}`      | Obtener producto por ID    |
+| POST   | `/api/producto`           | Crear nuevo producto       |
+| PUT    | `/api/producto/{id}`      | Actualizar producto        |
+| DELETE | `/api/producto/{id}`      | Eliminar producto          |
